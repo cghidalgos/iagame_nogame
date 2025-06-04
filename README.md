@@ -1,6 +1,6 @@
-# 🚀 Flask IA Ranking App
+# 🚀 Flask Astronaut Ranking App
 
-Esta aplicación Flask simula un proceso de postulación espacial: los usuarios completan un formulario de habilidades, responden una trivia sobre IA, resuelven un laberinto interactivo y reciben un puntaje final ponderado. El ranking muestra el Top 10 de postulantes y gráficas comparativas.
+Esta aplicación Flask simula un proceso de postulación espacial: los usuarios completan un formulario de habilidades, responden una trivia sobre astronautas, resuelven un laberinto interactivo y reciben un puntaje final ponderado. El ranking muestra el Top 10 de postulantes y gráficas comparativas.
 
 ## Características
 - Formulario de habilidades (liderazgo, idiomas, creatividad, etc.)

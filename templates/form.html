@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Postulación IA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Tipografía futurista -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+      color: #e0e0e0;
+      font-family: 'Orbitron', sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .ai-bg {
+      background: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      opacity: 0.18;
+      z-index: 0;
+      pointer-events: none;
+      filter: blur(2px) brightness(0.7);
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 540px;
+      margin: 0 auto;
+      margin-top: 40px;
+      background: rgba(18, 32, 48, 0.93);
+      border-radius: 16px;
+      box-shadow: 0 0 32px #00ffe7;
+      padding: 32px 24px 24px 24px;
+    }
+    h2 {
+      color: #00ffe7;
+      text-shadow: 0 0 12px #00ffe7, 0 0 2px #0ff;
+      letter-spacing: 2px;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+    label {
+      color: #00ffe7;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .form-control {
+      background: #1a2a3a;
+      border: 1.5px solid #00ffe7;
+      color: #e0e0e0;
+      border-radius: 8px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.08rem;
+      box-shadow: 0 0 8px #00ffe722;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    .form-control:focus {
+      border-color: #00ffe7;
+      box-shadow: 0 0 16px #00ffe7;
+      background: #212e3a;
+      color: #fff;
+    }
+    .form-text {
+      color: #1de9b6;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      text-shadow: 0 0 4px #1de9b6;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #00ffe7 0%, #0099ff 100%);
+      color: #212121;
+      border: none;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
+      font-size: 1.15rem;
+      box-shadow: 0 0 15px #00ffe7;
+      border-radius: 30px;
+      margin-top: 1.5rem;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #0099ff 0%, #00ffe7 100%);
+      box-shadow: 0 0 30px #00ffe7;
+    }
+    .btn-link {
+      color: #00ffe7;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-shadow: 0 0 8px #00ffe7;
+      margin-top: 1.5rem;
+      transition: color 0.2s;
+    }
+    .btn-link:hover {
+      color: #1de9b6;
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 0.5rem;
+        max-width: 100vw;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      .btn-primary {
+        font-size: 1rem;
+        padding: 0.7rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ai-bg"></div>
+  <div class="container">
+    <h2 class="mb-4 text-center">🤖 Formulario de Postulación IA</h2>
+    <form action="/procesar" method="post" autocomplete="off">
+      <div class="form-group">
+        <label for="nombre">Nombre completo:</label>
+        <small class="form-text">Nombre completo del postulante.</small>
+        <input class="form-control" name="nombre" id="nombre" type="text" placeholder="Ej: Juan Pérez" required>
+      </div>
+      <div class="form-group">
+        <label for="edad">Edad:</label>
+        <small class="form-text">Edad entre 12 y 30 años.</small>
+        <input class="form-control" name="edad" id="edad" type="number" min="12" max="30" placeholder="Ej: 16" required>
+      </div>
+      <div class="form-group">
+        <label for="promedio">Promedio académico:</label>
+        <small class="form-text">Promedio académico entre 0 y 5.</small>
+        <input class="form-control" name="promedio" id="promedio" type="number" step="0.1" min="0" max="5" placeholder="Ej: 4" required>
+      </div>
+      <div class="form-group">
+        <label for="deportes">Habilidad en deportes:</label>
+        <small class="form-text">Habilidad en deportes entre 1 y 10.</small>
+        <input class="form-control" name="deportes" id="deportes" type="number" min="1" max="10" placeholder="Ej: 2" required>
+      </div>
+      <div class="form-group">
+        <label for="liderazgo">Habilidad de liderar equipos:</label>
+        <small class="form-text">Habilidad de liderar equipos entre 1 y 10.</small>
+        <input class="form-control" name="liderazgo" id="liderazgo" type="number" min="1" max="10" placeholder="Ej: 1" required>
+      </div>
+      <div class="form-group">
+        <label for="club_ciencia">Habilidad en proyectos de ciencia:</label>
+        <small class="form-text">Habilidad en proyectos ciencia entre 1 y 10.</small>
+        <input class="form-control" name="club_ciencia" id="club_ciencia" type="number" min="1" max="10" placeholder="Ej: 6" required>
+      </div>
+      <div class="form-group">
+        <label for="ingles">Nivel de inglés:</label>
+        <small class="form-text">Nivel de inglés del 1 (básico) al 10 (avanzado).</small>
+        <input class="form-control" name="ingles" id="ingles" type="number" min="1" max="10" placeholder="Ej: 7" required>
+      </div>
+      <div class="form-group">
+        <label for="condicion_fisica">Condición física:</label>
+        <small class="form-text">Condición física del 1 al 10.</small>
+        <input class="form-control" name="condicion_fisica" id="condicion_fisica" type="number" min="1" max="10" placeholder="Ej: 6" required>
+      </div>
+      <div class="form-group">
+        <label for="trabajo_equipo">Habilidad para trabajar en equipo:</label>
+        <small class="form-text">Habilidad para trabajar en equipo del 1 al 10.</small>
+        <input class="form-control" name="trabajo_equipo" id="trabajo_equipo" type="number" min="1" max="10" placeholder="Ej: 8" required>
+      </div>
+      <div class="form-group">
+        <label for="idiomas">Número de idiomas que domina:</label>
+        <small class="form-text">Número de idiomas que domina.</small>
+        <input class="form-control" name="idiomas" id="idiomas" type="number" min="1" max="10" placeholder="Ej: 3" required>
+      </div>
+      <div class="form-group">
+        <label for="creatividad">Nivel de creatividad:</label>
+        <small class="form-text">Nivel de creatividad del 1 al 10.</small>
+        <input class="form-control" name="creatividad" id="creatividad" type="number" min="1" max="10" placeholder="Ej: 9" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+    </form>
+    <a href="/" class="btn btn-link mt-3">⬅ Volver</a>
+  </div>
+</body>
+</html>
